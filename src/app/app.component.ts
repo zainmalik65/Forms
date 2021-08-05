@@ -11,10 +11,13 @@ export class AppComponent implements OnInit {
   signupForm:FormGroup;
   ngOnInit()
   {
-    this.signupForm=new FormGroup({
-      'username':new FormControl(null,Validators.required),
-      'email':new FormControl(null,[Validators.required,Validators.email]),
-      'gender':new FormControl('male')
+    this.signupForm = new FormGroup({
+      'userData': new FormGroup({
+        'username': new FormControl(null, Validators.required),
+        'email': new FormControl(null, [Validators.required, Validators.email])
+      }),
+      'gender': new FormControl('male'),
+      
     });
   }
   onSubmit()
